@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import "transition-style";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .clip-left {
+    clip-path: polygon(0 0, 25% 0, 50% 100%, 0 100%);
+  }
+
+  .clip-right {
+    clip-path: polygon(75% 0, 100% 0, 100% 100%, 50% 100%);
+  }
+
+  .clip-cirle {
+    clip-path: circle(1% at 50% 50%);
+  }
+
+  .clip-big {
+    clip-path: circle(50% at 50% 50%);
+  }
+
+  @keyframes circle-in-hesitate {
+    0% {
+      clip-path: circle(0%);
+    }
+    40% {
+      clip-path: circle(20%);
+    }
+    100% {
+      clip-path: circle(125%);
+    }
+  }
+
+  [transition-style="in:circle:hesitate"] {
+    --transition__duration: 2s; /* default: 2.5s */
+    --transition__easing: cubic-bezier(2.65, 1, 0.3, 1);
+    --transition__delay: 1s;
+  }
+
+  .half-circle {
+    width: 40px;
+    height: 40px;
+    border: 10px solid black;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(-45deg);
+  }
+
+  @keyframes go-down-scale {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(250px) scale(2.5);
+    }
+  }
+
+  .transition-go-down {
+    animation: go-down-scale 1s ease-in-out 2s forwards;
+  }
+}
