@@ -4,9 +4,8 @@ sebuah web inovatif yang memungkinkan pengguna merencanakan dan _track_ pemasuka
 ## Configuration 
 1. use npm to install teh dependency
    ```bash
-npm install
-   ```
+npm install```
+
 2. start the development server
    ```bash
-npm run dev
-   ```
+npm run dev```
